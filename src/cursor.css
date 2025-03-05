@@ -1,0 +1,28 @@
+body {
+  cursor: none !important; /* Force hide the default cursor */
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: #ff00ff; /* You can change this to match your theme */
+  border-radius: 50%;
+  position: fixed; /* Changed from absolute to fixed */
+  pointer-events: none;
+  z-index: 99999;
+  transition: background-color 0.3s ease;
+  mix-blend-mode: difference; /* This will make it visible on any background */
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* Add a glow effect */
+}
+
+/* Allow clicking on interactive elements */
+a, button, input, textarea, select {
+  cursor: none !important;
+  z-index: 1;
+}
+
+/* Optional: Show a different cursor style when hovering over clickable elements */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor {
+  transform: translate(-50%, -50%) scale(1.2);
+}
