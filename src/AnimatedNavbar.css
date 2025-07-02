@@ -1,0 +1,79 @@
+.animated-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: #181818;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  transition: none; /* GSAP will handle animation */
+}
+
+.animated-navbar.open {
+  /* No transform, GSAP will animate */
+}
+
+.animated-navbar ul {
+  list-style: none;
+  padding: 0 1.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.animated-navbar li {
+  margin: 0;
+}
+
+.animated-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.animated-navbar a:hover {
+  color: #e0aaff;
+}
+
+.animated-navbar.dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.animated-navbar.light {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.animated-navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f600f2;
+  transition: width 0.3s ease;
+}
+
+.animated-navbar a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .animated-navbar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

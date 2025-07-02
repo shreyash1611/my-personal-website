@@ -264,3 +264,38 @@ button:hover {
     color: #8c55a2;
   }
 }
+
+.letter {
+  display: inline-block;
+  font-family: inherit;
+  color: inherit;
+  transition: color 0.3s;
+  margin: 0 0.02em;
+}
+.i-split {
+  display: inline-block;
+  position: relative;
+  width: 1ch;
+}
+.i-dot {
+  display: block;
+  font-size: 0.7em;
+  line-height: 0.2;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.i-stem {
+  display: block;
+  font-size: 1em;
+  line-height: 1;
+  position: absolute;
+  left: 50%;
+  top: 0.3em;
+  transform: translateX(-50%);
+}
+.fan-i, .rotate-letter {
+  color: inherit;
+  font-weight: inherit;
+}
